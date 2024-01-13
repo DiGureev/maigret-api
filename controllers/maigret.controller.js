@@ -23,6 +23,11 @@ export const getInfoTop10 = (req, res) => {
                     })
                 }
         })
+
+        pythonScript.on('error', function(error){
+            console.log('Error:', error)
+        })
+        
     }catch (e) {
       console.log(e)
       res.status(404).json({msg: "Can't get the data"});
