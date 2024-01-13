@@ -6,7 +6,7 @@ export const getInfoTop10 = (req, res) => {
     let data1;
 
     try{
-        const pythonScript = spawn("python", ["../maigret/maigret.py", username, "--json", "simple", "--top-sites", "10"]);
+        const pythonScript = spawn("maigret", [username, "--json", "simple", "--top-sites", "10"]);
 
         pythonScript.stdout.on('data', function(data) {
                 data1 = data.toString();
